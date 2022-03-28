@@ -1,0 +1,28 @@
+Aufgabe 1:
+a)
+WC: O(n^2)
+
+b) Wenn man vorraussetzt das der Array sortiert is und dieser dann auch sortiert ist, dann ändert sich die Laufzeit nicht.
+Wenn der Array nicht sortiert ist beträgt die Laufzeit: O(n), jedoch macht der Algorithmus dann keinen sinn mehr
+
+c)
+Laufzeit von 3): O(log n)
+Laufzeit von 2): O(log n)
+
+
+Aufgabe 2)
+a)
+1.Aufruf: l=0, r=8
+2.Aufruf: l=0, r=2
+3.Aufruf: l=1, r=2
+4.Aufruf: l=2, r=2
+5.Aufruf: l=3,r=2
+return -1;
+
+Aufgabe 3)
+a)
+In der Klasse Storage wir ein Temporärer Array angelegt dieser wird aber immer nur um 1 erhöht.
+Dies gescheit also jedes mal wenn dem Array etwas hinzu gefügt wird.
+Von der Auswirkung her ist es in allen Cases nun ein O(n). Während der BC in der Vorlesung O(1) war.
+
+
