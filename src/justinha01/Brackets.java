@@ -6,6 +6,8 @@ import java.util.HashMap;
  * class Brackets to check whenever a value is following an syntax
  * 
  * @author Justin Jansen <jjansen@databay.de>
+ * @author Svenja Zillekens
+ * @author Jan-Eric Storms
  * @version 0.4.3
  */
 public class Brackets {
