@@ -1,3 +1,5 @@
+package justinha01;
+
 import java.util.ArrayDeque;
 import java.util.HashMap;
 /**
