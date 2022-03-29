@@ -25,7 +25,7 @@ public class UPN {
                 }else{
                     double erg = isOperator(split[i]);
                     firstOperation = false;
-                    if(erg != NaN){
+                    if(!Double.isNaN(erg)){
                         stack.add(erg);
                     }else{
                         return NaN;
