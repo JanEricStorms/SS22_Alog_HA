@@ -3,12 +3,13 @@ package übung2jan;
 import java.util.ArrayDeque;
 import java.util.Hashtable;
 import java.util.Scanner;
+import java.util.Stack;
 
 import static java.lang.Double.NaN;
 
 public class UPN {
 
-    private ArrayDeque<Double> stack= new ArrayDeque<>();
+    private ArrayDeque<Double> stack= new ArrayDeque<>(); //Alternativ noch durch Stack<Double> ersetzen bei Multithreading
     private Hashtable<String, Double> mapVars = new Hashtable<>();
     private boolean firstOperation = true;
 
@@ -64,11 +65,13 @@ public class UPN {
             case "+":
                 return a+b;
             case "-":
-                return a-b;
+                return b-a;
             case "*":
                 return a*b;
             case "/":
-                return a/b;
+                return b/a;
+            case "^":
+                return Math.pow(b,a);
             default:
                 return NaN;
         }
