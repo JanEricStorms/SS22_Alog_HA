@@ -1,4 +1,4 @@
-package ha.jan.janha2;
+package ha.jan.janha02;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -12,14 +12,6 @@ public class MyHashSet<K>{
     private Hashtable<Integer, ArrayList<K>> myHash;
     private int numberOfElements;
     private int size;
-
-//    @Override
-//    public int hashCode(){
-////        System.out.println("HashCode" + super.hashCode());
-////        System.out.println("size" + size);
-////        System.out.println("Value " +(super.hashCode()%size));
-//        return Math.abs(super.hashCode() % size);
-//    }
 
     /**
      * Konstruktor der Klasse {@link MyHashSet} </br>
@@ -54,7 +46,6 @@ public class MyHashSet<K>{
         initializeHashtable();
         int hashCode;
         for(int i = 0; i < allValues.size();i++){
-//            hashCode = allValues.get(i).hashCode();
             hashCode = allValues.get(i).hashCode()%size;
             ArrayList<K> existingValues = this.myHash.get(hashCode);
             existingValues.add(allValues.get(i));
@@ -71,7 +62,6 @@ public class MyHashSet<K>{
      */
     public boolean add(K element){
         checkFillLvl();
-//        int hashCode = element.hashCode();
         int hashCode = Math.abs(element.hashCode()%size);
         if(contains(element)){
             return true;
@@ -90,7 +80,6 @@ public class MyHashSet<K>{
      * @return boolean > True wenn das Element enthalten ist, false wenn das Element nicht enthalten ist. </br>
      */
     public boolean delete(K element){
-//        int hashCode = element.hashCode();
         int hashCode = Math.abs(element.hashCode()%size);
         if(contains(element)){
             ArrayList<K> list = this.myHash.get(hashCode);
@@ -108,7 +97,6 @@ public class MyHashSet<K>{
      * @return boolean > True wenn das Element enthalten ist, false wenn das Element nicht enthalten ist. </br>
      */
     public boolean contains(K element ){
-//        int hashCode = element.hashCode();
         int hashCode = Math.abs(element.hashCode()%size);
         if(this.myHash.get(hashCode).contains(element)){
             return true;

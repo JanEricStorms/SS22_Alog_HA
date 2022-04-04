@@ -1,4 +1,4 @@
-package ha.jan.janha2;
+package ha.jan.janha02;
 
 import java.util.ArrayList;
 import java.util.Collections;
