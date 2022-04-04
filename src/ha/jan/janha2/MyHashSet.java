@@ -5,7 +5,7 @@ import java.util.Hashtable;
 
 /**
  * @author Svenja, Jan-Eric, Justin
- * @param <K> > Type of HashSet (z.B. Integer, String)
+ * @param <K> > Type of HashSet (z.B. Integer, String
  */
 public class MyHashSet<K>{
 
