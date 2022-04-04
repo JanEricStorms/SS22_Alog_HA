@@ -1,4 +1,4 @@
-package übung1jan;
+package uebungen.jan.übung1jan;
 
 public class InterpolationSearch {
         // Returns index of x if it is present in arr[l..

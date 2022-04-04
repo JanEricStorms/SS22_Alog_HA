@@ -1,4 +1,4 @@
-package justinha01;
+package ha.justin.justinha01;
 
 import java.util.ArrayDeque;
 import java.util.HashMap;

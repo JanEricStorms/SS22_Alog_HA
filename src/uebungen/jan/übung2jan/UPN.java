@@ -1,9 +1,8 @@
-package übung2jan;
+package uebungen.jan.übung2jan;
 
 import java.util.ArrayDeque;
 import java.util.Hashtable;
 import java.util.Scanner;
-import java.util.Stack;
 
 import static java.lang.Double.NaN;
 

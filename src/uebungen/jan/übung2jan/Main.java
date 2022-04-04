@@ -1,4 +1,4 @@
-package übung2jan;
+package uebungen.jan.übung2jan;
 
 import java.util.Scanner;
 

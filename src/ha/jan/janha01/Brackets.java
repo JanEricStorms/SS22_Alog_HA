@@ -1,4 +1,4 @@
-package janha01;
+package ha.jan.janha01;
 
 import java.util.ArrayDeque;
 

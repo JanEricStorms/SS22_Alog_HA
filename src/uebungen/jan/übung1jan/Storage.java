@@ -1,6 +1,4 @@
-package übung1jan;
-
-import java.util.Arrays;
+package uebungen.jan.übung1jan;
 
 public class Storage {
     private int[] speicher = new int[10];
