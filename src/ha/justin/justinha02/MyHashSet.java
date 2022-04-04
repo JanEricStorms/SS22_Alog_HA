@@ -106,7 +106,7 @@ public class MyHashSet<K> {
         ArrayList<K> totalList = new ArrayList<>();
 
         for (ArrayList<K> list : this.table.values()){
-            totalList.addAll(list);
+            totalList.addAll((ArrayList<K>) list.clone());
         }
         return totalList;
     }

@@ -8,6 +8,7 @@ import java.util.Collections;
 public class Caller {
 
     public static void main(String[] args) {
+
         MyHashSet<Integer> myHash = new MyHashSet<>();
         for (int i = 0; i < 30; i++) {
             myHash.add(i);
