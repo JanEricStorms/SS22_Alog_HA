@@ -1,6 +1,15 @@
+package ha03;
+
+import java.sql.Array;
 import java.sql.SQLOutput;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
+/**
+ * Klasse implementiert {@link IList} um eine einfach Verkettete Liste zuerstellen.
+ *
+ * @param <T>
+ */
 public class LinkedList<T> implements IList<T>
 {
 
@@ -24,7 +33,8 @@ public class LinkedList<T> implements IList<T>
         {
             if(p != 0)
             {
-                return false;
+//                return false;
+                throw new ArrayIndexOutOfBoundsException("Das erste Element muss an der Stelle p = 0 eingefuegt werden.");
             }else{
                 head = new Node(x);
                 return true;
@@ -49,10 +59,13 @@ public class LinkedList<T> implements IList<T>
             return true;
 
         }
-        System.out.println("Das Element kann der Liste nicht hinzugefuegt werden, \n" +
+//        System.out.println("Das Element kann der Liste nicht hinzugefuegt werden, \n" +
+//                "da sich die angegebene Position nicht im gueltigen Werte-Bereich befindet. \n" +
+//                "Gueltiger Beeich: 0 bis " + getCount() + ". Angegebener Wert: " + p);
+//        return false;
+        throw new ArrayIndexOutOfBoundsException("Das Element kann der Liste nicht hinzugefuegt werden, \n" +
                 "da sich die angegebene Position nicht im gueltigen Werte-Bereich befindet. \n" +
                 "Gueltiger Beeich: 0 bis " + getCount() + ". Angegebener Wert: " + p);
-        return false;
     }
 
     @Override
@@ -73,7 +86,8 @@ public class LinkedList<T> implements IList<T>
             getNodeAt(p-1).next = getNodeAt(p+1);
             return true;
         }
-        return false;
+//        return false;
+        throw new ArrayIndexOutOfBoundsException("Es existiert keine Element an p = " + p);
     }
 
     @Override
@@ -81,8 +95,9 @@ public class LinkedList<T> implements IList<T>
     {
         if(getNodeAt(p) == null)
         {
-            System.out.println("An der Stelle " + p + " existiert kein Element.");
-            return null;
+//            System.out.println("An der Stelle " + p + " existiert kein Element.");
+//            return null;
+            throw new ArrayIndexOutOfBoundsException("An der Stelle " + p + " existiert kein Element.");
         }
         return getNodeAt(p).data;
     }
@@ -100,6 +115,7 @@ public class LinkedList<T> implements IList<T>
             pointer = pointer.next;
         }
         return -1;
+//        throw new NoSuchElementException("Das Element ist nicht in der Liste enthalten"):
     }
 
     @Override
@@ -126,6 +142,11 @@ public class LinkedList<T> implements IList<T>
         return ret;
     }
 
+    /**
+     * Die Methode gibt eine Node zurueck. </br>
+     * @param p > Stelle der Node. </br>
+     * @return Node > Gibt eine Node zurueck. </br>
+     */
     private Node getNodeAt(int p)
     {
         if(p < 0 || p >= getCount())
@@ -155,6 +176,9 @@ public class LinkedList<T> implements IList<T>
         return sb.toString();
     }
 
+    /**
+     * Diese Methode testet alle Funktionen der Liste.
+     */
     public void testList()
     {
         System.out.println("Starte test der Liste.");
@@ -171,6 +195,9 @@ public class LinkedList<T> implements IList<T>
         System.out.println(list.asString());
         System.out.println("Element an p = 8 auslesen");
         System.out.println(list.getAt(8));
+        System.out.println("Element an p = 0 entfernen");
+        System.out.println(list.removeAt(0));
+        System.out.println(list.asString());
         System.out.println("Element x = -1 an p = 3 einfuegen");
         System.out.println(list.insertAt(-1,3));
         System.out.println(list.asString());
