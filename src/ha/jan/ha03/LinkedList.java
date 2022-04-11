@@ -1,9 +1,6 @@
-package ha03;
-
-import java.sql.Array;
-import java.sql.SQLOutput;
-import java.util.NoSuchElementException;
+package ha.jan.ha03;
 import java.util.Random;
+
 
 /**
  * Klasse implementiert {@link IList} um eine einfach Verkettete Liste zuerstellen.
@@ -27,17 +24,16 @@ public class LinkedList<T> implements IList<T>
     }
 
     @Override
-    public boolean insertAt(T x, int p)
+    public void insertAt(T x, int p)
     {
         if(head == null)
         {
             if(p != 0)
             {
-//                return false;
                 throw new ArrayIndexOutOfBoundsException("Das erste Element muss an der Stelle p = 0 eingefuegt werden.");
             }else{
                 head = new Node(x);
-                return true;
+                return;
             }
         }
         if(p <= getCount() && p >= 0)
@@ -47,46 +43,41 @@ public class LinkedList<T> implements IList<T>
             {
                 new_Node.next = head;
                 head = new_Node;
-                return true;
+                return;
             }
             if(p == getCount())
             {
                 getNodeAt(p-1).next = new_Node;
-                return true;
+                return;
             }
             new_Node.next = getNodeAt(p+1);
             getNodeAt(p-1).next = new_Node;
-            return true;
+            return;
 
         }
-//        System.out.println("Das Element kann der Liste nicht hinzugefuegt werden, \n" +
-//                "da sich die angegebene Position nicht im gueltigen Werte-Bereich befindet. \n" +
-//                "Gueltiger Beeich: 0 bis " + getCount() + ". Angegebener Wert: " + p);
-//        return false;
         throw new ArrayIndexOutOfBoundsException("Das Element kann der Liste nicht hinzugefuegt werden, \n" +
                 "da sich die angegebene Position nicht im gueltigen Werte-Bereich befindet. \n" +
                 "Gueltiger Beeich: 0 bis " + getCount() + ". Angegebener Wert: " + p);
     }
 
     @Override
-    public boolean removeAt(int p)
+    public void removeAt(int p)
     {
         if(p == 0)
         {
             head = head.next;
-            return true;
+            return;
         }
         if(p == getCount()-1)
         {
             getNodeAt(p-1).next = null;
-            return true;
+            return;
         }
         if(p > 0 && p < getCount()-1)
         {
             getNodeAt(p-1).next = getNodeAt(p+1);
-            return true;
+            return;
         }
-//        return false;
         throw new ArrayIndexOutOfBoundsException("Es existiert keine Element an p = " + p);
     }
 
@@ -95,8 +86,6 @@ public class LinkedList<T> implements IList<T>
     {
         if(getNodeAt(p) == null)
         {
-//            System.out.println("An der Stelle " + p + " existiert kein Element.");
-//            return null;
             throw new ArrayIndexOutOfBoundsException("An der Stelle " + p + " existiert kein Element.");
         }
         return getNodeAt(p).data;
@@ -187,19 +176,19 @@ public class LinkedList<T> implements IList<T>
         LinkedList<Integer> list = new LinkedList<>();
         for (int i = 0; i<10 ; i++)
         {
-            System.out.println(list.insertAt(rd.nextInt(),i));
+            list.insertAt(rd.nextInt(),i);
         }
         System.out.println("Ausgabe der Liste : " + list.asString());
         System.out.println("Entferne Element an p = 3");
-        System.out.println(list.removeAt(3));
+        list.removeAt(3);
         System.out.println(list.asString());
         System.out.println("Element an p = 8 auslesen");
         System.out.println(list.getAt(8));
         System.out.println("Element an p = 0 entfernen");
-        System.out.println(list.removeAt(0));
+        list.removeAt(0);
         System.out.println(list.asString());
         System.out.println("Element x = -1 an p = 3 einfuegen");
-        System.out.println(list.insertAt(-1,3));
+        list.insertAt(-1,3);
         System.out.println(list.asString());
         System.out.println("Element -1 suchen");
         System.out.println(list.search(-1));

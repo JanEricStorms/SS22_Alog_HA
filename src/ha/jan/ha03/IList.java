@@ -1,4 +1,4 @@
-package ha03;
+package ha.jan.ha03;
 
 public interface IList<T> {
 
@@ -6,21 +6,22 @@ public interface IList<T> {
      * Methode ist fuer das Einfuegen eines Elementes zustaenig. </br>
      * @param x > Value das eingefuegt werden soll </br>
      * @param p > Position an der das Value eingefuegt werden soll </br>
-     * @return boolean > "true", wenn das Element erfolgreich eingefuegt wurde, anstonsten "false" </br>
+     * @throws ArrayIndexOutOfBoundsException > Wenn das Element nicht eingefuegt werden kann </br>
      */
-    public boolean insertAt(T x,int p);
+    public void insertAt(T x, int p);
 
     /**
      * Methode ist fuer das Entfernen eines Elementes zustaendig. </br>
      * @param p > position an der das Element entfernt werden soll. </br>
-     * @return boolean > "true", wenn das Element erfolgreich entfertnt wurde, anstonsten "false" </br>
+     * @throws ArrayIndexOutOfBoundsException > Wenn das Element nicht entwernt werden kann </br>
      */
-    public boolean removeAt(int p);
+    public void removeAt(int p);
 
     /**
      * Methode gibt der Wert aus. </br>
      * @param p > Position an der das Element ausgegeben werden soll. </br>
-     * @return T > returns the element for given Position </br>
+     * @return T > gibt das Element an der stelle p zurueck </br>
+     * @throws ArrayIndexOutOfBoundsException > Wenn kein Element gefunden worden ist
      */
     public T getAt(int p);
 

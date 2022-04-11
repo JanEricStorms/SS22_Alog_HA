@@ -1,4 +1,4 @@
-package ha03;
+package ha.jan.ha03;
 
 public class Main {
 
