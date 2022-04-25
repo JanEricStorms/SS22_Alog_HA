@@ -124,6 +124,7 @@ public class BinarySearchTree {
         if (node == null) {
             return 0;
         }
+
         return getSum(node.left)+getSum(node.right)+node.value;
     }
 
@@ -132,7 +133,6 @@ public class BinarySearchTree {
         return node.left == null && node.right == null;
     }
 
-    // function to return maximum of two numbers
     public static int getMax(int a, int b){
         return Math.max(a, b);
     }
@@ -141,12 +141,10 @@ public class BinarySearchTree {
         return this.getHeight(root);
     }
 
-    //function to get the height of a tree or node
     private int getHeight(TreeNode a){
         if(a==null || this.isLeaf(a)) {
             return 0;
         }
-        //height of a node will be 1+ greater among height of right subtree and height of left subtree
         return(getMax(this.getHeight(a.getLeft()), this.getHeight(a.getRight())) + 1);
     }
 
@@ -174,28 +172,13 @@ public class BinarySearchTree {
         return getLeafCount(node.getLeft())+getLeafCount(node.getRight())+(isLeaf(node) ? 1 : 0);
     }
 
-    private boolean hasOnlyOneChild(TreeNode node){
-
-        return (node.left == null && node.right != null) || (node.left != null && node.right == null);
-    }
-
     public boolean hasNodesWithOneChild() {
-        return this.hasNodeWithOneChild(root);
-    }
-
-    private boolean hasNodeWithOneChild(TreeNode node) {
-
-        if (node == null) {
-            return false;
-        }
-        if (hasOnlyOneChild(node)) {
-            return true;
-        }
-        return hasNodeWithOneChild(node.getLeft()) || hasNodeWithOneChild(node.getRight());
+        return this.getElementCount() % 2 == 0;
     }
 
     public static void main(String[] args) {
         BinarySearchTree tree = new BinarySearchTree();
+
         for (int i = 0; i < 20; i++) {
             int x = (int) (Math.random() * 50);
             System.out.println(x);
