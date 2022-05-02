@@ -1,4 +1,4 @@
-package ha.jan.janha04;
+package ha.jan.janha05;
 
 public class Main {
     public static void main(String[] args) {
