@@ -19,7 +19,6 @@ public class Hauptprogramm {
     public static void getResult(int gewicht){
         ArrayList<String> korb = new ArrayList<>();
         getResultat(gewicht, new ArrayList<Integer>(), korb);
-        System.out.println();
         for (int i = 0; i < korb.size();i++){
             System.out.println(korb.get(i));
             printInverted(korb.get(i));
@@ -56,7 +55,6 @@ public class Hauptprogramm {
         auswahl.add(-1*gewichte[auswahl.size()]);
         getResultat(gewicht,auswahl,korb);
         auswahl.remove(auswahl.size()-1);
-
     }
 
     /**
