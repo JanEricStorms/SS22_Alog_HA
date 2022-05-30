@@ -41,6 +41,8 @@ public class Hauptprogramm {
             return;
         }
         if(auswahl.size() == 4){
+            System.out.println(auswahl);
+            System.out.println(!korb.contains(auswahl));
             if(!korb.contains(auswahl.toString()) && calcSum(auswahl) == gewicht){
                 korb.add(auswahl.toString());
             }
